@@ -13,13 +13,14 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Newton Ni
+title: Nwtn
 email: nwtnni@gmail.com
-description: Descriptions of things.
+description: Newton Ni's personal blog.
+author: Newton Ni
 
 # Build settings
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge
 exclude:
   - Gemfile
   - Gemfile.lock

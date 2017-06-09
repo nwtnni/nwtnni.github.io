@@ -1,4 +1,15 @@
 <meta charset="UTF-8">
-
-<script src="/scripts/analytics.js"></script>
 <title>{{ site.title }}</title>
+<meta name="description" content="{{ site.description }}">
+<meta name="author" content="{{ site.author }}">
+
+<!-- Load font -->
+<link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+
+<!-- Load favicon -->
+<link rel="icon" href="/favicon.ico">
+
+
+{% if jekyll.environment == 'production'%}
+{% include analytics.html %}
+{% endif %}
