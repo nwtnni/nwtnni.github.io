@@ -25,6 +25,8 @@ exclude:
   - Gemfile
   - Gemfile.lock
 
+date_format: "%b %-d, %Y"
+
 sass:
   sass_dir: _sass
   style: compressed

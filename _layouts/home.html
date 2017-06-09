@@ -12,10 +12,19 @@ layout: default
 
   <div class="row">
     <div class="six columns">
-      <h5 class="section-heading">Recent Posts</h5>
+      <h5 class="section-heading">Latest Post</h5>
+
+        {% assign post = site.posts.first %} 
+        
+        <h6 class="title">{{ post.title }} </h6>
+        <h6>{{ post.date | date: site.date_format }}</h6> 
+
+        <p>{{ post.content }}</p>
+
+
     </div>        
     <div class="six columns">
-      <h5 class="section-heading">Recent Projects</h5> 
+      <h5 class="section-heading">Latest Project</h5> 
 
     </div>
 

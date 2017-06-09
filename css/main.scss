@@ -12,3 +12,13 @@ body {
   padding-top: 2.0rem;
 }
 
+.section-heading {
+  @extend strong;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.title {
+  @extend strong;
+  text-align: left;
+}
