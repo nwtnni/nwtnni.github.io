@@ -1,12 +1,13 @@
-footer {
-  a {
-    text-decoration: none;
-    text-transform: uppercase;
-    color: #222;
-  }
+$active: #009EFF;
 
-  button {
+footer {
+
+  .button {
     margin: 0 auto;
     width: 14rem;
+  }
+
+  button:hover a {
+    color: $active;
   }
 }
