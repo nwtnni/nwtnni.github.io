@@ -28,3 +28,14 @@ exclude:
 sass:
   sass_dir: _sass
   style: compressed
+
+collections:
+  projects:
+
+    output: true
+    permalink: /:collection/:name
+
+    defaults:
+      values:
+        layout: project
+
