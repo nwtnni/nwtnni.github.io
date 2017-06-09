@@ -2,24 +2,11 @@
 # Main CSS file for importing partials
 ---
 
-@import "normalize";
-@import "skeleton";
+@import "vendor/normalize";
+@import "vendor/skeleton";
 
-@import "navbar";
-@import "hero";
-@import "footer";
-
-body {
-  margin: 2.0rem auto;
-}
-
-.section-heading {
-  @extend strong;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.title {
-  @extend strong;
-  text-align: left;
-}
+@import "partials/_base";
+@import "partials/_utility";
+@import "partials/_navbar";
+@import "partials/_hero";
+@import "partials/_footer";

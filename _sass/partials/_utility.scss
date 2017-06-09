@@ -1,0 +1,15 @@
+.is-hoverable {
+  &:hover {
+    color: $hover;
+  }
+}
+
+.collapse-inline {
+  @include break-min($mobile) {
+    display: none;
+  }
+
+  @include break-min($desktop) {
+    display: inline;
+  }
+}
