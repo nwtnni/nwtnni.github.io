@@ -26,6 +26,7 @@ exclude:
   - Gemfile.lock
 
 date_format: "%b %-d, %Y"
+permalink: pretty
 
 sass:
   sass_dir: _sass

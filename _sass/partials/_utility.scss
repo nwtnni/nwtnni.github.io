@@ -9,11 +9,11 @@
 }
 
 .is-collapsing {
-  @include break-min($mobile) {
+  @include break-min($mobile-width) {
     display: none;
   }
 
-  @include break-min($desktop) {
+  @include break-min($desktop-width) {
     display: inline;
   }
 }
