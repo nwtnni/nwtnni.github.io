@@ -1,10 +1,14 @@
-.is-hoverable {
+.is-full {
+  width: 100%;
+}
+
+.is-hovering {
   &:hover {
     color: $hover;
   }
 }
 
-.collapse-inline {
+.is-collapsing {
   @include break-min($mobile) {
     display: none;
   }
