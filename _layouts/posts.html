@@ -2,4 +2,49 @@
 layout: default
 ---
 
-{{ content }}
+<div class="container">
+
+  {% if page.template == true %}
+    {% assign posts = site.categories.[page.category] %}
+  {% else %}
+    {% assign posts = site.posts %}  
+  {% endif %}
+
+  {% for post in posts %}
+    <div class="row">
+      <div class="two columns post-title post-date">
+        {{ post.date | date: site.date_format }}        
+      </div> 
+      
+      <div class="ten columns">
+        <a href="{{ post.url }}">
+          <h6 class="post-title is-hovering">{{ post.title }}</h6>
+        </a>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="ten columns offset-by-two">
+
+        {{ post.excerpt }} 
+
+        <div class="row">
+          {% for category in post.categories %} 
+            <div class="four columns">
+              <a href="/category/{{ category }}" class="button navbar-link is-full is-hovering">
+                {{ category }}
+              </a> 
+            </div>
+          {% endfor %} 
+        </div>
+      </div>
+    </div>
+  
+    {% if post != site.posts.last %}
+    <div class="row">
+      <hr>
+    </div>
+    {% endif %}
+  {% endfor %} 
+
+</div>

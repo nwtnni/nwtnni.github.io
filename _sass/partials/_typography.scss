@@ -1,0 +1,11 @@
+.post-date {
+  text-align: right;
+}
+
+.post-title {
+  @extend strong;
+  text-decoration: none;
+  color: $text;
+  padding: 0;    
+  margin-top: 3rem;
+}

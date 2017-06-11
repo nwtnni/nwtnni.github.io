@@ -37,8 +37,3 @@ collections:
 
     output: true
     permalink: /:collection/:name
-
-    defaults:
-      values:
-        layout: project
-

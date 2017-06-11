@@ -1,3 +1,10 @@
 ---
 layout: default
 ---
+
+{% for project in site.projects %}
+  
+  <h1>{{ project.title }}</h1>
+  <p>{{ project.content }}</p> 
+
+{% endfor %}
