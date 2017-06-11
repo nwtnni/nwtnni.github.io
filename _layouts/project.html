@@ -2,4 +2,22 @@
 layout: default
 ---
 
-{{ content }}
+<div class="container">
+  <div class="row">
+    <div class="two columns post-title post-date">
+      {{ page.date | date: site.date_format }}        
+    </div> 
+    
+    <div class="ten columns">
+      <h3 class="post-title">{{ page.title }}</h3>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="ten columns offset-by-two">
+
+      {{ content }} 
+
+    </div>
+  </div>
+</div>

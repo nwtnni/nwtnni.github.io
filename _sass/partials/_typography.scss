@@ -1,11 +1,18 @@
 .post-date {
-  text-align: right;
+
+  @include break-min($mobile-width) {
+    text-align: left;
+  }
+
+  @include break-min($phablet-width) {
+    text-align: right;
+  }
 }
 
 .post-title {
-  @extend strong;
   text-decoration: none;
   color: $text;
   padding: 0;    
   margin-top: 3rem;
+  @extend strong;
 }

@@ -2,9 +2,35 @@
 layout: default
 ---
 
-{% for project in site.projects %}
-  
-  <h1>{{ project.title }}</h1>
-  <p>{{ project.content }}</p> 
+<div class="container">
 
-{% endfor %}
+  {% for project in site.projects %}
+    <div class="row">
+      <div class="two columns post-title post-date">
+        {{ project.date | date: site.date_format }}        
+      </div> 
+
+      <div class="ten columns">
+        <a href="{{ project.url }}">
+          <h5 class="post-title is-hovering">{{ project.title }}</h5>
+        </a>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="ten columns offset-by-two">
+
+        {{ project.excerpt }} 
+
+      </div>
+    </div>
+  
+    {% if project != site.projects.last %}
+    <div class="row">
+      <hr>
+    </div>
+    {% endif %}
+    
+  {% endfor %} 
+
+</div>
