@@ -30,7 +30,7 @@ layout: default
 
         {% for category in post.categories %} 
           <a href="/category/{{ category }}" class="button button-primary post-category is-hovering">
-            {{ category }}
+            <i class="fa fa-tag"></i> {{ category }}
           </a> 
         {% endfor %} 
       </div>
@@ -42,5 +42,4 @@ layout: default
     </div>
     {% endif %}
   {% endfor %} 
-
 </div>
