@@ -17,9 +17,7 @@ layout: default
       </div> 
       
       <div class="ten columns">
-        <a href="{{ post.url }}">
-          <h5 class="post-title is-hovering">{{ post.title }}</h5>
-        </a>
+          <h5 class="post-title">{{ post.title }}</h5>
       </div>
     </div>
 
@@ -27,6 +25,10 @@ layout: default
       <div class="ten columns offset-by-two">
 
         {{ post.excerpt }} 
+
+        <a href="{{ post.url }}" class="button post-read-more">
+          <i class="fa fa-arrow-circle-right"></i> Read More
+        </a>
 
         {% for category in post.categories %} 
           <a href="/category/{{ category }}" class="button button-primary post-category is-hovering">
