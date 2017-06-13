@@ -26,12 +26,12 @@ layout: default
 
         {{ post.excerpt }} 
 
-        <a href="{{ post.url }}" class="button post-read-more">
+        <a href="{{ post.url }}" class="button button-left is-hovering">
           <i class="fa fa-arrow-circle-right"></i> Read More
         </a>
 
         {% for category in post.categories %} 
-          <a href="/category/{{ category }}" class="button button-primary post-category is-hovering">
+          <a href="/category/{{ category }}" class="button button-primary button-right">
             <i class="fa fa-tag"></i> {{ category }}
           </a> 
         {% endfor %} 

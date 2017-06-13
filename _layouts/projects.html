@@ -19,7 +19,7 @@ layout: default
           <h5 class="post-title">{{ project.title }}</h5>  
           {{ project.content }}
           {% for category in project.categories %}
-            <a href="/category/{{ category }}" class="button button-primary post-category">
+            <a href="/category/{{ category }}" class="button button-primary button-left">
               <i class="fa fa-tag"></i> {{ category }}
             </a>
           {% endfor %}

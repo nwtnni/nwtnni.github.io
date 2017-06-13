@@ -1,13 +1,3 @@
-.post-read-more {
-  float: left;
-  width: 25%;
-}
-
-.post-category {
-  float: right;
-  width: 25%;
-}
-
 .post-date {
   @include break-min($mobile-width) {
     text-align: left;

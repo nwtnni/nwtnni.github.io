@@ -18,17 +18,11 @@ layout: default
 
       {{ content }} 
 
-      <hr>
-
-      <div class="row">
-        {% for category in page.categories %} 
-          <div class="four columns">
-            <a href="/category/{{ category }}" class="button navbar-link is-full is-hovering">
-              {{ category }}
-            </a> 
-          </div>
-        {% endfor %} 
-      </div>
+      {% for category in page.categories %} 
+      <a href="/category/{{ category }}" class="button button-primary button-left">
+        <i class="fa fa-tag"></i> {{ category }}
+      </a> 
+      {% endfor %} 
     </div>
   </div>
 </div>
