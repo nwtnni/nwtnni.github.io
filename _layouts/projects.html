@@ -4,28 +4,33 @@ layout: default
 
 <div class="container">
 
-  {% for project in site.projects %}
-    <div class="row">
-      <div class="two columns post-title post-date">
-        {{ project.date | date: site.date_format }}        
-      </div> 
-
-      <div class="ten columns">
-        <a href="{{ project.url }}">
-          <h5 class="post-title is-hovering">{{ project.title }}</h5>
-        </a>
-      </div>
-    </div>
+  {% assign projects = site.projects | sort: "date" | reverse %}
+  {% for project in projects %}
 
     <div class="row">
-      <div class="ten columns offset-by-two">
 
-        {{ project.excerpt }} 
-
+      <div class="three columns offset-by-one">
+        <div class="">
+          <a href="{{ project.github }}" class="button project-button is-hovering" target="_blank">
+            <i class="fa {{ project.icon }} project-icon"></i>
+          </a>
+        </div>
       </div>
+      
+      <div class="eight columns">
+          <h5 class="post-title">{{ project.title }}</h5>  
+
+          {{ project.content }}
+          
+            <a href="/category/{{ project.category }}" class="button button-primary post-category">
+              {{ project.category }}
+            </a>
+      </div>
+
+
     </div>
-  
-    {% if project != site.projects.last %}
+
+    {% if project != projects.last %}
     <div class="row">
       <hr>
     </div>

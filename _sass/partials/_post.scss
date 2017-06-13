@@ -1,5 +1,8 @@
-.post-date {
+.post-category {
+  width: 25%;
+}
 
+.post-date {
   @include break-min($mobile-width) {
     text-align: left;
   }
@@ -13,6 +16,10 @@
   text-decoration: none;
   color: $text;
   padding: 0;    
-  margin-top: 3rem;
   @extend strong;
+
+  &:first-of-type {
+    margin-top: 3rem;
+  }
 }
+
