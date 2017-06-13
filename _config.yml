@@ -28,11 +28,14 @@ exclude:
 date_format: "%b %-d, %Y"
 permalink: pretty
 
+gems:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
 sass:
   sass_dir: _sass
   style: compressed
 
 collections:
   projects:
-
     permalink: /:collection/:name
