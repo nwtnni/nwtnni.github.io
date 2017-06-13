@@ -22,25 +22,29 @@ layout: default
   <div class="row">
     <div class="six columns">
 
-      {% assign project = site.projects.first %}
+      {% assign projects = site.projects | sort: "date" %}
+      {% assign project = projects.last %}
 
-      <a href="{{ project.url }}">
-        <h6 class="post-title is-hovering">{{ project.title }} </h6> 
+      <h6 class="post-title">{{ project.title }}</h6>
+      <h6>{{ project.date | date: site.date_format }}</h6>
+      <p>{{ project.content }}</p>
+
+      <a href="{{ project.github }}" class="button is-hovering is-full" target="_blank">
+        <i class="fa fa-github"></i> View on Github
       </a>
-      <h6>{{ project.date | date: site.date_format }}</h6> 
-
-      <p>{{ project.excerpt }}</p>
     </div>
     <div class="six columns">
 
         {% assign post = site.posts.first %} 
         
-        <a href="{{ post.url }}">
-          <h6 class="post-title is-hovering">{{ post.title }} </h6> 
-        </a>
+        <h6 class="post-title">{{ post.title }} </h6> 
         <h6>{{ post.date | date: site.date_format }}</h6> 
 
         <p>{{ post.excerpt }}</p>
+
+        <a href="{{ post.url }}" class="button is-hovering is-full" target="_blank">
+          <i class="fa fa-arrow-circle-right"></i> Read More
+        </a>
 
     </div>   
   </div>
