@@ -2,6 +2,7 @@
 layout: post
 title: Creating a Website
 date: 2017-06-11
+description: A brief overview of how I created my website.
 category: site
 ---
 

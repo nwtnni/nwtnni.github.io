@@ -2,6 +2,7 @@
 layout: post
 title: Markov Introduction
 date: 2017-06-12
+description: A brief explanation of Markov chains and Markov chain text generation.
 category: markov
 ---
 
