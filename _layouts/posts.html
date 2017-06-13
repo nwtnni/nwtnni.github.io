@@ -28,15 +28,11 @@ layout: default
 
         {{ post.excerpt }} 
 
-        <div class="row">
-          {% for category in post.categories %} 
-            <div class="four columns">
-              <a href="/category/{{ category }}" class="button navbar-link is-full is-hovering">
-                {{ category }}
-              </a> 
-            </div>
-          {% endfor %} 
-        </div>
+        {% for category in post.categories %} 
+          <a href="/category/{{ category }}" class="button button-primary post-category is-hovering">
+            {{ category }}
+          </a> 
+        {% endfor %} 
       </div>
     </div>
   

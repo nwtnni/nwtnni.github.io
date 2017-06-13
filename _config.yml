@@ -35,5 +35,4 @@ sass:
 collections:
   projects:
 
-    output: true
     permalink: /:collection/:name

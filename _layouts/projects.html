@@ -9,7 +9,7 @@ layout: default
 
     <div class="row">
 
-      <div class="three columns offset-by-one">
+      <div class="three columns">
         <div class="">
           <a href="{{ project.github }}" class="button project-button is-hovering" target="_blank">
             <i class="fa {{ project.icon }} project-icon"></i>
@@ -17,14 +17,16 @@ layout: default
         </div>
       </div>
       
-      <div class="eight columns">
+      <div class="nine columns">
           <h5 class="post-title">{{ project.title }}</h5>  
 
           {{ project.content }}
           
-            <a href="/category/{{ project.category }}" class="button button-primary post-category">
-              {{ project.category }}
+          {% for category in project.categories %}
+            <a href="/category/{{ category }}" class="button button-primary post-category">
+              {{ category }}
             </a>
+          {% endfor %}
       </div>
 
 
