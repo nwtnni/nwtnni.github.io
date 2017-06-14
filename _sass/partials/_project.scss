@@ -15,4 +15,8 @@
   @include break-min($phablet-width) {
     font-size: 10vw;
   }
+
+  @include break-min($desktop-width) {
+    font-size: 10rem;
+  }
 }
