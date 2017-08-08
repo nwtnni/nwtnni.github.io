@@ -11,7 +11,6 @@ ruby "2.4.0"
 # Happy Jekylling!
 gem "jekyll", "3.4.3"
 
-gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'sass', '~>3.4.24'
 gem 'pygments.rb', '~>1.1.2'
 
