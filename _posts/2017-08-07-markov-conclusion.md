@@ -3,7 +3,7 @@ layout: post
 title: Markov Conclusion
 date: 2017-08-07
 description: A summary of the finished Markov Chain Text Generator program.
-category: markov
+category: [project, markov]
 ---
 
 Unfortunately I've been caught up in research and other things this summer, but after
