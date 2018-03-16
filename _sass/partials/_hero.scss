@@ -8,17 +8,3 @@
   margin: 1.0rem auto;
   text-align: center;
 } 
-
-.hero-profile {
-
-  background-size: cover;
-
-  @include break-min($mobile-width) {
-    background-image: none; 
-  }
-
-  @include break-min($phablet-width) {
-    background-image: url("/assets/profile.png"); 
-  }
-}
-

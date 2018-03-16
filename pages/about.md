@@ -5,24 +5,21 @@ permalink: /about/
 
 **My name is Newton Ni.**
 
-I'm a junior studying engineering physics and computer science at Cornell 
-University. My goal is to work at the interface between technology and 
-medicine, leveraging first-hand experience to develop better software
-for healthcare. Clinical data is growing at such a fast pace--there's a lot
-of useful information buried underneath, and I hope to be there when
-it's unearthed.
+I'm a junior studying computer science at Cornell 
+University. I love teaching, playing violin, and reading to learn.
+Eventually, I hope to work at the interface between technology and 
+medicine, working with hospital staff to develop better software
+for healthcare.
 
 **For now, you can find me:**
-- Teaching youth at my [local church](http://em.ficcc.org/){:target="_blank"}
-- Analyzing genetic data with the [Sabuncu lab](http://sabuncu.engineering.cornell.edu/){:target="_blank"}
-- Learning web development from [various online sources](https://github.com/bmorelli25/Become-A-Full-Stack-Web-Developer){:target="_blank"}
-- Performing as part of the [Cornell Symphony Orchestra](http://www.cuorchestra.org/){:target="_blank"}
+- Consulting for [CS 3110](http://www.cs.cornell.edu/courses/cs3110/2018sp/)
+- Performing as part of the [Cornell Chamber Orchestra](http://www.cuorchestra.org/){:target="_blank"}
 - Tinkering with side projects on [Github](https://github.com/nwtnni){:target="_blank"}
 
 **As for technical skills,** 
 
-I'm proficient in Java and Python, and familiar with C, Javascript,
-Ruby, HTML, and CSS.
+I'm proficient in Java, Python, OCaml, and Rust, and familiar with C, Javascript,
+HTML, and CSS.
 
 Check out my [resume](/assets/resume.pdf){:target="_blank"} for more information!
 
