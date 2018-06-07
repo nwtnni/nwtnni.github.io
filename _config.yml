@@ -35,3 +35,7 @@ gems:
 sass:
   sass_dir: _sass
   style: compressed
+
+collections:
+  projects:
+    permalink: /:collection/:name
