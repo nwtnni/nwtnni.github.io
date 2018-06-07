@@ -5,47 +5,27 @@ layout: default
 <div class="container">
   <div class="hero">
     <h2 class="hero-heading">Newton Ni</h1> 
-    <h5 class="hero-heading">Software. Music.</h4>
   </div>
 
   <hr>
 
   <div class="row">
-    <div class="six columns">
-      <h5>Latest Project</h5>
-    </div>
-    <div class="six columns">
-      <h5>Latest Post</h5>
+    <div class="six columns offset-by-three columns">
+      <h5 class="hero-heading">Latest Post</h5>
     </div>
   </div>
 
   <div class="row">
-    <div class="six columns">
 
-      {% assign projects = site.projects | sort: "date" %}
-      {% assign project = projects.last %}
+    {% assign post = site.posts.first %} 
+    
+    <h6 class="post-title">{{ post.title }} </h6> 
+    <h6>{{ post.date | date: site.date_format }}</h6> 
 
-      <h6 class="post-title">{{ project.title }}</h6>
-      <h6>{{ project.date | date: site.date_format }}</h6>
-      <p>{{ project.content }}</p>
+    <p>{{ post.excerpt }}</p>
 
-      <a href="{{ project.github }}" class="button is-hovering is-full" target="_blank">
-        <i class="fa fa-github"></i> View on Github
-      </a>
-    </div>
-    <div class="six columns">
-
-        {% assign post = site.posts.first %} 
-        
-        <h6 class="post-title">{{ post.title }} </h6> 
-        <h6>{{ post.date | date: site.date_format }}</h6> 
-
-        <p>{{ post.excerpt }}</p>
-
-        <a href="{{ post.url }}" class="button is-hovering is-full" target="_blank">
-          <i class="fa fa-arrow-circle-right"></i> Read More
-        </a>
-
-    </div>   
+    <a href="{{ post.url }}" class="button is-hovering is-full" target="_blank">
+      <i class="fa fa-arrow-circle-right"></i> Read More
+    </a>
   </div>
 </div>

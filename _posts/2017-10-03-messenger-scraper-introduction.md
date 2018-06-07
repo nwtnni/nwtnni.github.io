@@ -3,7 +3,7 @@ layout: post
 title: Messenger Scraper Introduction
 date: 2017-10-03
 description: Explains some of the ideas behind the Messenger scraper.
-category: [project, scraper]
+category: [scraper]
 ---
 
 This program was written to address a few issues with Facebook Messenger. It's hard to view, search, and count old messages, and Messenger doesn't provide a way to export chats to a more easily viewable format. This was my prototyping process for a solution.

@@ -3,7 +3,7 @@ layout: post
 title: Halite II Postmortem
 date: 2018-06-07
 description: A brief overview of my Halite II experience.
-category: [project, contest]
+category: [contest]
 ---
 
 I first heard about [Halite II][1], an AI competition hosted by TwoSigma,

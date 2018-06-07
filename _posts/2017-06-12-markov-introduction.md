@@ -3,7 +3,7 @@ layout: post
 title: Markov Introduction
 date: 2017-06-12
 description: A brief explanation of Markov chains and Markov chain text generation.
-category: [project, markov]
+category: [markov]
 ---
 
 My second personal project on Github was a Markov chain text generator.
