@@ -28,7 +28,7 @@ exclude:
 date_format: "%b %-d, %Y"
 permalink: /:categories/:title/
 
-gems:
+plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
 

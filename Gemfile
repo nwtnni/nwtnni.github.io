@@ -9,7 +9,7 @@ ruby "2.3.1"
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem "jekyll", "3.4.3"
+gem "jekyll", "~>3.7.3"
 
 gem 'sass', '~>3.4.24'
 gem 'pygments.rb', '~>1.1.2'
@@ -20,7 +20,7 @@ gem 'pygments.rb', '~>1.1.2'
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
-  gem 'github-pages'
+  gem "github-pages", "193"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

@@ -4,13 +4,7 @@ layout: default
 
 <div class="container">
 
-  {% if page.template == true %}
-    {% assign posts = site.categories.[page.category] %}
-  {% else %}
-    {% assign posts = site.posts %}  
-  {% endif %}
-
-  {% for post in posts %}
+  {% for post in site.posts %}
     <div class="row">
       <div class="two columns post-title post-date">
         {{ post.date | date: site.date_format }}        
