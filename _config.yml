@@ -26,7 +26,7 @@ exclude:
   - Gemfile.lock
 
 date_format: "%b %-d, %Y"
-permalink: pretty
+permalink: /:categories/:title/
 
 gems:
   - jekyll-seo-tag
