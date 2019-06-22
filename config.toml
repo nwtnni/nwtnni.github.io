@@ -1,0 +1,10 @@
+title = "Newton Ni"
+description = "Newton Ni's personal website."
+
+base_url = "https://nwtnni.me"
+
+highlight_code = true
+highlight_theme = "gruvbox-dark"
+
+generate_rss = true
+
