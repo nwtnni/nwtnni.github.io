@@ -8,3 +8,5 @@ highlight_theme = "gruvbox-dark"
 
 generate_rss = true
 
+[extra]
+author = "Newton Ni"
