@@ -12,25 +12,33 @@
     <link href="https://fonts.googleapis.com/css?family=Inconsolata|Merriweather|Raleway&display=swap" rel="stylesheet"> 
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fontello.css">
   </head>
-
-  <hr>
-
-  <nav>
-    <a href="/">HOME</a>
-    <a href="#">ABOUT</a>
-    <a href="#">RESUME</a>
-    <a href="#">ARCHIVE</a>
-  </nav>
-
-  <hr>
-
   <body>
+
+    <header>
+      <hr>
+      <nav>
+        <a href="/">HOME</a>
+        <a href="#">ABOUT</a>
+        <a href="#">RESUME</a>
+        <a href="#">ARCHIVE</a>
+      </nav>
+      <hr>
+    </header>
 
     {% block body %}
 
     {% endblock body %}
 
+    <footer>
+      <hr>
+      <nav>
+        <a href="#" class="button"><i class="icon-github"></i>GITHUB</a>
+        <a href="#" class="button"><i class="icon-mail"></i>GMAIL</a>
+        <a href="#" class="button"><i class="icon-linkedin"></i>LINKEDIN</a>
+        <a href="#" class="button"><i class="icon-twitter"></i>TWITTER</a>
+      </nav>
+    </footer>
   </body>
-
 </html>

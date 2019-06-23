@@ -1,0 +1,45 @@
+@font-face {
+  font-family: 'fontello';
+  src: url('font/fontello.eot?91230331');
+  src: url('font/fontello.eot?91230331#iefix') format('embedded-opentype'),
+       url('font/fontello.woff2?91230331') format('woff2'),
+       url('font/fontello.woff?91230331') format('woff'),
+       url('font/fontello.ttf?91230331') format('truetype'),
+       url('font/fontello.svg?91230331#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+ 
+ [class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+ 
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+ 
+.icon-twitter:before { content: '\f099'; } /* '' */
+.icon-github:before { content: '\f09b'; } /* '' */
+.icon-right:before { content: '\f0a9'; } /* '' */
+.icon-mail:before { content: '\f0e0'; } /* '' */
+.icon-linkedin:before { content: '\f0e1'; } /* '' */

@@ -1,15 +1,28 @@
-$hover: #0FA0CE;
+$link: #0FA0CE;
 $text: #222;
+
+$light: #E1E1E1;
+$medium: #BBB;
+$heavy: #888;
 
 html {
   max-width: 960px;
   margin: 0 auto;
+  color: $text;
+}
+
+hr {
+  display: block;
+  border: none;
+  height: 1px;
+  background-color: $light;
 }
 
 nav {
   display: grid;
   align-items: center;
   justify-items: center;
+  padding: 0 10%;
   @media (max-width: 479px) {
     grid-auto-rows: 1fr;
     grid-auto-flow: row;
@@ -18,14 +31,19 @@ nav {
     grid-auto-columns: 1fr;
     grid-auto-flow: column;
   }
-  a {
-    text-decoration: none; 
-  }
 }
 
 a {
   color: $text;
-  &:hover {
-    color: $hover; 
-  }
+  text-decoration: none; 
+  &:hover, &:focus { color: $link; }
+}
+
+.button {
+  background-color: transparent;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid $medium;
+  padding: 0.5em 1em;
+  &:hover, &:focus { border-color: $heavy; }
 }
