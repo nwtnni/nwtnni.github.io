@@ -1,21 +1,44 @@
 $link: #0FA0CE;
-$text: #222;
+$text: #404040;
 
 $light: #E1E1E1;
 $medium: #BBB;
 $heavy: #888;
 
 html {
-  max-width: 960px;
+  font-size: 62.5%;
+  max-width: 800px;
   margin: 0 auto;
+}
+
+body {
   color: $text;
+  font-family: "Merriweather", serif;
+  line-height: 1.6;
+  font-size: 2em;
+  margin: 2rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Merriweather Sans", sans-serif;
+  font-weight: 900;
+}
+
+h1 {
+  font-size: 2.5rem; 
+  margin: 3rem 0;
+}
+
+h2 {
+  font-size: 2rem; 
+  margin: 2rem 0;
 }
 
 hr {
   display: block;
   border: none;
   height: 1px;
-  margin: 1em auto;
+  margin: 1rem auto;
   background-color: $light;
 }
 
@@ -29,7 +52,6 @@ nav {
   display: grid;
   align-items: center;
   justify-items: center;
-  padding: 0 10%;
   @media (max-width: 479px) {
     grid-auto-rows: 1fr;
     grid-auto-flow: row;
@@ -41,11 +63,12 @@ nav {
   a {
     text-transform: uppercase;
     font-family: "Merriweather Sans", serif;
+    font-size: 2rem;
   }
 }
 
 .collapse {
-  @media (max-width: 799px) {
+  @media (max-width: 719px) {
     display: none;
   }
 }
@@ -53,10 +76,27 @@ nav {
 .button {
   background-color: transparent;
   text-align: center;
-  font-size: 0.80em;
-  border-radius: 5px;
+  font-size: 1.2rem;
+  border-radius: 20px;
   border: 1px solid $medium;
-  padding: 1em 3em;
-  margin: 1em auto;
+  padding: 1rem 3rem;
+  margin: 1rem 0;
   &:hover, &:focus { border-color: $heavy; }
+}
+
+.hero {
+  font-size: 5rem;
+  font-family: "Merriweather Sans", sans-serif;
+  font-weight: 900;
+  text-align: center;
+  padding-top: 5rem;
+  color: #000000;
+}
+
+.subhero {
+  font-size: 2.5rem;
+  font-family: "Merriweather Sans", sans-serif;
+  text-align: center;
+  padding-bottom: 5rem;
+  color: $text;
 }
