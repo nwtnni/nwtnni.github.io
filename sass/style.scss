@@ -1,37 +1,37 @@
-$link: #0FA0CE;
-$text: #404040;
-
-$light: #E1E1E1;
-$medium: #BBB;
-$heavy: #888;
+$bg: #FFFFFF;
+$fg: #555555;
+$theme: #2972CC;
+$soft: #D0D0D0;
+$link-new: #FF830F;
+$link-old: #C4650C;
 
 html {
   font-size: 62.5%;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 1rem auto;
+  color: $fg;
+  background-color: $bg;
 }
 
 body {
-  color: $text;
-  font-family: "Merriweather", serif;
-  line-height: 1.6;
   font-size: 2em;
-  margin: 2rem;
-}
-
-h1, h2, h3, h4, h5, h6 {
   font-family: "Merriweather Sans", sans-serif;
-  font-weight: 900;
+  line-height: 1.6;
 }
 
 h1 {
   font-size: 2.5rem; 
-  margin: 3rem 0;
+  margin: 6rem 0;
 }
 
 h2 {
-  font-size: 2rem; 
+  font-size: 2.0rem;
+  margin: 4rem 0;
+}
+
+p {
   margin: 2rem 0;
+  font-family: "Merriweather", serif;
 }
 
 hr {
@@ -39,13 +39,25 @@ hr {
   border: none;
   height: 1px;
   margin: 1rem auto;
-  background-color: $light;
+  background-color: $soft;
 }
 
 a {
-  color: $text;
   text-decoration: none; 
-  &:hover, &:focus { color: $link; }
+}
+
+i {
+  color: $theme;
+}
+
+p a {
+  color: $link-new;
+  &:hover, &:focus {
+    text-decoration: underline;
+  }
+  &:visited {
+    color: $link-old;
+  }
 }
 
 nav {
@@ -61,9 +73,11 @@ nav {
     grid-auto-flow: column;
   }
   a {
-    text-transform: uppercase;
-    font-family: "Merriweather Sans", serif;
-    font-size: 2rem;
+    color: $fg;
+    text-transform: lowercase;
+    &:hover, &:focus {
+      color: $theme;
+    }
   }
 }
 
@@ -74,29 +88,45 @@ nav {
 }
 
 .button {
-  background-color: transparent;
-  text-align: center;
   font-size: 1.2rem;
   border-radius: 20px;
-  border: 1px solid $medium;
+  border: 1px solid $soft;
   padding: 1rem 3rem;
-  margin: 1rem 0;
-  &:hover, &:focus { border-color: $heavy; }
+  margin: 2rem;
+  &:hover, &:focus {
+    color: $bg;
+    background-color: $theme;
+    i {
+        color: $bg;
+    }
+  }
 }
 
 .hero {
-  font-size: 5rem;
-  font-family: "Merriweather Sans", sans-serif;
-  font-weight: 900;
+  font-size: 6rem;
   text-align: center;
   padding-top: 5rem;
-  color: #000000;
+  color: $theme;
 }
 
 .subhero {
-  font-size: 2.5rem;
-  font-family: "Merriweather Sans", sans-serif;
   text-align: center;
   padding-bottom: 5rem;
-  color: $text;
+}
+
+header {
+  @media (min-width: 720px) {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+  }
+}
+
+.title {
+  flex-grow: 1;
+}
+
+.date {
+  font-weight: normal;
+  text-transform: lowercase;
 }

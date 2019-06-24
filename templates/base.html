@@ -9,36 +9,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" >
     <title>{% block title %}{{ config.title }}{% endblock title %}</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Merriweather:400, 900|Merriweather Sans:400, 900" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Merriweather Sans:400, 900" rel="stylesheet"> 
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="fontello.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/fontello.css">
   </head>
   <body>
 
-    <header>
-      <hr>
-      <nav>
-        <a href="/">Home</a>
-        <a href="#">About</a>
-        <a href="#">Blog</a>
-        <a href="#">Resume</a>
-      </nav>
-      <hr>
-    </header>
+    <hr>
+
+    <nav>
+      <a href="/">Home</a>
+      <a href="#">About</a>
+      <a href="/blog">Blog</a>
+      <a href="#">Resume</a>
+    </nav>
+
+    <hr>
 
     {% block body %}
 
     {% endblock body %}
 
-    <footer>
-      <hr>
-      <nav>
-        <a href="#" class="button"><i class="icon-github"></i><span class="collapse"> GitHub</span></a>
-        <a href="#" class="button"><i class="icon-mail"></i><span class="collapse"> Gmail</span></a>
-        <a href="#" class="button"><i class="icon-linkedin"></i><span class="collapse"> LinkedIn</span></a>
-        <a href="#" class="button"><i class="icon-twitter"></i><span class="collapse"> Twitter</span></a>
-      </nav>
-    </footer>
+    <hr>
+
+    <nav>
+      <a href="#" class="button"><i class="icon-github"></i><span class="collapse"> GitHub</span></a>
+      <a href="#" class="button"><i class="icon-mail"></i><span class="collapse"> Gmail</span></a>
+      <a href="#" class="button"><i class="icon-linkedin"></i><span class="collapse"> LinkedIn</span></a>
+      <a href="#" class="button"><i class="icon-twitter"></i><span class="collapse"> Twitter</span></a>
+    </nav>
   </body>
 </html>
