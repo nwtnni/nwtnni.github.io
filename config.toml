@@ -1,0 +1,13 @@
+title = "Newton Ni"
+description = "Newton Ni's personal website."
+
+base_url = "https://nwtnni.me"
+
+highlight_code = true
+highlight_theme = "inspired-github"
+
+compile_sass = true
+generate_rss = true
+
+[extra]
+author = "Newton Ni"

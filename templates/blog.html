@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% import "macros.html" as macros %}
+
+{% block title %}
+  {{ super() }} | Blog
+{% endblock title %}
+
+{% block description %}
+  Archived blog posts.
+{% endblock description %}
+
+{% block body %}
+  {% for page in section.pages %}
+    {{ macros::preview(page=page) }}
+    {% if not loop.last %}
+      <hr class="divider">
+    {% endif %}
+  {% endfor %}
+{% endblock body %}
