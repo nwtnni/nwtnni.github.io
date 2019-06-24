@@ -1,7 +1,18 @@
-$bg: #FFFFFF;
-$fg: #555555;
-$theme: #2972CC;
+// Solarized Light
+// Blue text on tan background
+$code-bg: #fdf6e3;
+$code-fg: #268bd2;
+
+// Gray text on white background
+$text-bg: #FFFFFF;
+$text-fg: #555555;
+
+// Solarized Blue
+$theme: $code-fg;
+
 $soft: #D0D0D0;
+
+// Orange links
 $link-new: #FF830F;
 $link-old: #C4650C;
 
@@ -9,8 +20,8 @@ html {
   font-size: 62.5%;
   max-width: 800px;
   margin: 1rem auto;
-  color: $fg;
-  background-color: $bg;
+  color: $text-fg;
+  background-color: $text-bg;
 }
 
 body {
@@ -32,6 +43,23 @@ h2 {
 p {
   margin: 2rem 0;
   font-family: "Merriweather", serif;
+}
+
+// Markdown code: block
+pre {
+  font-family: "Inconsolata", monospace;
+  padding: 0rem 2rem;
+  margin: 4rem 0;
+  border-radius: 10px;
+}
+
+// Markdown code: inline
+code {
+  font-family: "Inconsolata", monospace;
+  color: $code-fg;
+  background-color: $code-bg;
+  padding: 0.0rem 0.5rem;
+  border-radius: 10px;
 }
 
 hr {
@@ -73,7 +101,7 @@ nav {
     grid-auto-flow: column;
   }
   a {
-    color: $fg;
+    color: $text-fg;
     text-transform: lowercase;
     &:hover, &:focus {
       color: $theme;
@@ -94,10 +122,10 @@ nav {
   padding: 1rem 3rem;
   margin: 2rem;
   &:hover, &:focus {
-    color: $bg;
+    color: $text-bg;
     background-color: $theme;
     i {
-        color: $bg;
+        color: $text-bg;
     }
   }
 }

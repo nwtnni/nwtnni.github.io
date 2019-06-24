@@ -1,5 +1,23 @@
 {% extends "base.html" %}
 
+{% block title %}
+  {{ super() }} | {{ page.title }}
+{% endblock title %}
+
+{% block description %}
+  {{ page.description }} 
+{% endblock description %}
+
 {% block body %}
-  {{ __tera_context }}
+
+  <article>
+    <header>
+      <h1 class="title">{{ page.title }}</h1>
+      <h2 class="date">{{ page.date }}</h2>
+    </header>
+    <main>
+      {{ page.content | safe }}
+    </main>
+  </article>
+
 {% endblock body %}
