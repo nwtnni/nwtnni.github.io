@@ -15,7 +15,7 @@ learned from our original design mistakes.
 ## Background
 
 Paxos is a distributed consensus protocol that guarantees safety in asynchronous
-settings, and liveness with less than `n / 2` crash failures (where `n` is the
+settings, and liveness with less than n / 2 crash failures (where n is the
 number of replicas).
 
 We can use Paxos to implement fault-tolerant replicated state machines (sometimes
@@ -32,26 +32,26 @@ divisions in the model:
 
 The core protocol is based entirely on ["Paxos Made Moderately Complex"][10].
 Each server is divided into several message-passing actor threads: we have
-`thread::acceptor`, `thread::commander`, `thread::leader`, `thread::replica`,
-and `thread::scout` as in the original paper.
+thread::acceptor, thread::commander, thread::leader, thread::replica,
+and thread::scout as in the original paper.
 
 - Log: persistent storage for failure recovery
 
-Stable storage is implemented in the `storage` module. We currently
+Stable storage is implemented in the storage module. We currently
 implement stable storage by serializing and deserializing Rust data
-to file with `serde` and `bincode`.
+to file with serde and bincode.
 
 - State Machine: the user-defined state machine to replicate
 
-The entire Paxos implementation is generic over the `State` trait defined
-in the `state` module.
+The entire Paxos implementation is generic over the State trait defined
+in the state module.
 
 - Transport: communication over the network
 
 There are two kinds of channels: internal channels between actor threads,
-implemented in the `internal` module, and external channels between servers
-implemented in the `external` module. The former are backed by `futures::sync::mpsc`
-channels, and the latter by `tokio::net::TcpStream`.
+implemented in the internal module, and external channels between servers
+implemented in the external module. The former are backed by futures::sync::mpsc
+channels, and the latter by tokio::net::TcpStream.
 
 ## Types
 
@@ -80,7 +80,7 @@ pub enum In<C: state::Command> {
 ```
 
 Exhaustive pattern matching checks along with strongly-typed communication
-channels in `internal.rs` and `external.rs` help us to verify at compile time
+channels in internal.rs and external.rs help us to verify at compile time
 that a) only relevant messages are sent to each actor, and b) all valid 
 messages are handled by each actor.
 
@@ -90,8 +90,8 @@ trait bounds and associated types.
 
 In general, it seems that [trait bounds on structs][11] are discouraged,
 because they 'infect' any structs that contain them. However, because
-I needed to access the associated `State::Command` and `State::Response`
-types, pretty much every type ended up with `S: state::State` bounds.
+I needed to access the associated State::Command and State::Response
+types, pretty much every type ended up with S: state::State bounds.
 On the other hand, the vast majority of these types are internal, so the
 end-user doesn't have to worry about the trait bounds.
 
@@ -100,7 +100,7 @@ I ended up using the [derivative][13] crate instead.
 
 I do miss [OCaml functors][14]: the ability to parameterize entire modules
 on generic types would have come in handy here, because all types in
-the `thread` module really should be parameterized on the same `state::State`
+the thread module really should be parameterized on the same state::State
 type.
 
 ## Testing
@@ -147,22 +147,21 @@ Client 2 received message log ["b", "c"]
 
 Although I had to write a lot more code (mostly type annotations), I'm
 pretty confident in the maintainability and extensibility of the library.
-For example, at one point I refactored the `message::P1A` to include
+For example, at one point I refactored the message::P1A to include
 an extra field, so I could implement a state reduction optimization
 described in the paper. The compiler pointed out every use-site that
 needed to be patched as a result of the change, and it was a relatively
 painless, mechanical fix.
 
-I was also using `async/await` to try it out on nightly Rust, but couldn't
+I was also using async/await to try it out on nightly Rust, but couldn't
 figure out how to do some of the plumbing between old and new style Futures.
-Currently the actor threads all manually implement `tokio::prelude::Future`,
-but I'm planning to go back and switch to proper `async` methods at some point. 
+Currently the actor threads all manually implement tokio::prelude::Future,
+but I'm planning to go back and switch to proper async methods at some point. 
 
-This is the first time I've posted one of my projects somewhere visible--first
+This is the first time I've posted one of my projects somewhere visible: first
 on [Reddit][15], and then on [Twitter][16]. I haven't gotten much technical
 feedback (not sure if that's good or bad), but it's been a good start to
-getting more involved in the community. Reminds me of when I first
-began to meet people online in games like MapleStory or RuneScape.
+getting more involved in the community.
 
 [1]: http://www.cs.cornell.edu/courses/cs5414/2018fa/
 [2]: https://www.rust-lang.org/
