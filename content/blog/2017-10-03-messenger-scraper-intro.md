@@ -1,5 +1,5 @@
 +++
-title = "Messenger Scraper Introduction"
+title = "Messenger Scraper Intro"
 date = 2017-10-03
 description = "Explains some of the ideas behind the Messenger scraper."
 +++
