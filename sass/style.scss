@@ -162,11 +162,10 @@ nav {
 }
 
 header {
-  @media (min-width: 720px) {
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-  }
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: baseline;
 }
 
 .title {
@@ -176,4 +175,5 @@ header {
 .date {
   font-weight: normal;
   text-transform: lowercase;
+  margin-top: -$gap-large;
 }

@@ -8,7 +8,7 @@ Here, I explain more ideas behind the finished Messenger scraper GUI, including 
 
 ## Background
 
-[Here's the introductory post, if you haven't read it.]({% post_url 2017-10-03-messenger-scraper-introduction %})
+[Here's the introductory post, if you haven't read it.](/blog/messenger-scraper-introduction)
 
 I switched languages from Ruby to Java primarily to target a larger audience: people
 are far more likely to use a GUI-based Java program than a Ruby command-line script.
@@ -48,12 +48,18 @@ recursive constructors. For example, the thread constructor:
 
 ```java
 public Thread(Element e, String user) {
-	this.messages = new ArrayList<>();
-	e.select(".message").forEach(message -> messages.add(new Message(message)));
-	Collections.reverse(messages);
-	this.people = new HashSet<>(e.select(".user").eachText());
-	this.people.remove(user);
-	this.ID = new HashSet<>(Arrays.asList(e.ownText().split(",[ ]*")));
+    this.messages = new ArrayList<>();
+    e.select(".message").forEach(message -> {
+        messages.add(new Message(message))
+    });
+    Collections.reverse(messages);
+    this.people = new HashSet<>(
+        e.select(".user").eachText()
+    );
+    this.people.remove(user);
+    this.ID = new HashSet<>(
+        Arrays.asList(e.ownText().split(",[ ]*"))
+    );
 }
 ```
 
@@ -77,20 +83,22 @@ chronological order. This is the solution I settled on:
 
 ```java
 private void collapseThreads() {
-	ArrayList<Thread> collapsed = new ArrayList<>();
-	Set<Set<String>> unique = new HashSet<>();
-	
-	threads.forEach(thread -> unique.add(thread.getID()));
-	unique.forEach(id -> {
-		collapsed.add(
-			threads.stream()
-			.filter(t -> t.getID().equals(id))
-			.sorted((a, b) -> a.getStartTime().compareTo(b.getStartTime()))
-			.reduce((a, b) -> a.add(b))
-			.get()
-		);
-	});
-	threads = collapsed;
+    ArrayList<Thread> collapsed = new ArrayList<>();
+    Set<Set<String>> unique = new HashSet<>();
+
+    threads.forEach(thread -> unique.add(thread.getID()));
+    unique.forEach(id -> {
+        collapsed.add(
+            threads.stream()
+              .filter(t -> t.getID().equals(id))
+              .sorted((a, b) -> {
+                  a.getStartTime().compareTo(b.getStartTime())
+              })
+              .reduce((a, b) -> a.add(b))
+              .get()
+      );
+    });
+    threads = collapsed;
 }
 ```
 
@@ -112,7 +120,7 @@ If you think of a faster or more elegant way to do this, let me know!
 I wanted to make the GUI as familiar as possible, so I opted for a Messenger-style layout, with
 different threads listed on the left, and the conversation on the right.
 
-<img src="/assets/scraper.png" align="center" width="100%">
+<img src="/img/scraper.png" align="center" width="100%">
 
 - Filter out group or private threads
 - Sort by date, conversation length, or participant name
@@ -123,7 +131,7 @@ different threads listed on the left, and the conversation on the right.
 
 There were two main design decisions that I thought were noteworthy. 
 
-##### Sort (and Filter)
+## Sort (and Filter)
 
 The first was the implementation of filter and sort. Given their names, 
 you might suspect that I used them with the
@@ -132,9 +140,9 @@ roughly what the code looks like:
 
 ```java
 scraper.getThreads()
-	.stream()
-	.filter(f.getPredicate())
-	.sorted(s.getComparator())
+    .stream()
+    .filter(f.getPredicate())
+    .sorted(s.getComparator())
 ```
 
 Let's look at (part of) Sort:
@@ -142,35 +150,36 @@ Let's look at (part of) Sort:
 ```java
 public enum Sort {
 	
-	EARLY("Earliest First", (a, b) -> {
-		return a.getStartTime().compareTo(b.getStartTime());
-	}), 
+    EARLY("Earliest First", (a, b) -> {
+        return a.getStartTime().compareTo(b.getStartTime());
+    }), 
 	
-	LONG("Longest First", (a, b) -> {
-		return b.getMessages().size() - a.getMessages().size();
-	});
+    LONG("Longest First", (a, b) -> {
+        return b.getMessages().size() - a.getMessages().size();
+    });
+    
+    private String str;
+    private Comparator<Thread> cmp;
 	
-	private String str;
-	private Comparator<Thread> cmp;
+    private Sort(String str, Comparator<Thread> cmp) {
+        this.str = str;
+        this.cmp = cmp;
+    }
 	
-	private Sort(String str, Comparator<Thread> cmp) {
-		this.str = str;
-		this.cmp = cmp;
-	}
+    public Comparator<Thread> getComparator() {
+        return cmp;
+    }
 	
-	public Comparator<Thread> getComparator() {
-		return cmp;
-	}
-	
-	@Override
-	public String toString() {
-		return str;
-	}
+    @Override
+    public String toString() {
+        return str;
+    }
 }
 ```
 
 Each Sort enum has two properties: a display String, and a Comparator for use
-with the sort method. [(This is the documentation for Java 8's comparator.)](https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html)
+with the sort method.
+[This is the documentation for Java 8's comparator.](https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html)
 
 This makes Sort and Filter extremely extensible. It only takes three lines
 of code in this file to add a new type, and the rest of the GUI code just works.
@@ -178,7 +187,7 @@ For example, to add alphabetical sort:
 
 ```java
 ALPHABETICAL("Alphabetical", (a, b) -> {
-	return a.getPeople().compareTo(b.getPeople());
+    return a.getPeople().compareTo(b.getPeople());
 }),
 ```
 
@@ -186,10 +195,10 @@ Contrast this with a solution without lambdas:
 
 ```java
 class AlphabetSort implements Comparator<Thread> {
-	@Override
-	public int compare(Thread a, Thread b) {
-		return a.getPeople().compareTo(b.getPeople());
-	}
+    @Override
+    public int compare(Thread a, Thread b) {
+        return a.getPeople().compareTo(b.getPeople());
+    }
 }
 
 ALPHABETICAL("Alphabetical", new AlphabetSort());

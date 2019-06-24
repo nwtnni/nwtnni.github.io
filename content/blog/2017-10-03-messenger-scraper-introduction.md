@@ -14,7 +14,7 @@ to parse through said data, which comes in a messy .xml format.
 
 ## Prototyping
 
-I used a lightweight scripting language--Ruby--to get a basic parser up and running. 
+I used a lightweight scripting language, Ruby, to get a basic parser up and running. 
 Using [Nokogiri](https://github.com/sparklemotion/nokogiri) and Ruby's functional features, 
 it only took an afternoon.
 
@@ -60,7 +60,7 @@ data.css('.message').map { |message| Message.new(message) }
 
 ## Audience
 
-After I finished my prototype, I showed it to a few apartmentmates, who displayed some interest
+After I finished my prototype, I showed it to a few apartment-mates, who displayed some interest
 in trying it for themselves. This is when I realized that a) Ruby isn't exactly a household
 programming language, and b) command-line programs aren't very user-friendly.
 
