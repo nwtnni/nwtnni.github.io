@@ -10,6 +10,8 @@ to familiarize myself with GUI programming in Java again, to prepare myself for 
 upcoming semester of TA'ing CS 2112. So despite the remaining bugs I'm sure are 
 lurking around, I'm ready to call it a day.
 
+<!-- more -->
+
 ## Screenshot
 
 <img src="/img/markov.png" align="center" width="100%">

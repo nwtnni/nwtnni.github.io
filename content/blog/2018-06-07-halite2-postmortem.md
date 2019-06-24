@@ -11,6 +11,8 @@ destroy the enemy, and be the last fleet standing. I managed to place a
 respectable 57th in the final standings, and 15th among university students.
 [Here's my bot's source code.][0]
 
+<!-- more -->
+
 ## Motivation
 
 Originally, I wasn't intending to become this invested in Halite. I had just been

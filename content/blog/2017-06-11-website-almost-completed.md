@@ -9,6 +9,8 @@ to structure and display projects, this website is almost
 done! I've learned a lot about Jekyll and CSS in the process.
 Thank goodness for Chrome developer tools.
 
+<!-- more -->
+
 I've been meaning to start a personal website for a while now,
 but haven't had the time to learn web development until this
 summer. Github Pages seemed like a good place to host mine, despite

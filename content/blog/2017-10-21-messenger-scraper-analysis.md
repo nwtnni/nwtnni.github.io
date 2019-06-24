@@ -4,7 +4,10 @@ date = 2017-10-21
 description = "More thoughts on the Messenger scraper, including Java's functional programming features, GUI design, and optimization."
 +++
 
-Here, I explain more ideas behind the finished Messenger scraper GUI, including Java's functional programming features, GUI design, and optimization.
+Here, I explain more ideas behind the finished Messenger scraper GUI,
+including Java's functional programming features, GUI design, and optimization.
+
+<!-- more -->
 
 ## Background
 

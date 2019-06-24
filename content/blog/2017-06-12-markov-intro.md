@@ -10,6 +10,8 @@ interface and parsing only a single file at a time. Also there are no
 unit tests (oops). I'd like to revisit this project and add a few
 more features and unit tests.
 
+<!-- more -->
+
 ## Background
 
 [Markov chains](https://en.wikipedia.org/wiki/Markov_chain) 

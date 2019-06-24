@@ -12,6 +12,8 @@ protocols in Rust, including [three phase commit][6] and [COPS][7], I rewrote ou
 [Paxos implementation][8] from scratch over winter break, applying lessons 
 learned from our original design mistakes.
 
+<!-- more -->
+
 ## Background
 
 Paxos is a distributed consensus protocol that guarantees safety in asynchronous

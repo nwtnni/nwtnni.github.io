@@ -11,6 +11,8 @@ Peter Shirley's very approachable [Ray Tracing in One Weekend][4], which walks
 you through the implementation of a basic C++ ray tracer. Here I describe some
 interesting lessons from translating to Rust, and [my ray tracer can be found here][5].
 
+<!-- more -->
+
 One of the first tasks for any graphics software is to either find or write
 a linear algebra library: vector and matrix computations are everywhere.
 The most mature option is probably [nalegbra][6], but since we only need the
