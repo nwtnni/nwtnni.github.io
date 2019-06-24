@@ -1,46 +1,15 @@
 {% extends "base.html" %}
+{% import "macros.html" as macros %}
 
 {% block body %}
 
-  <div class="hero">
-    Newton Ni
-  </div>
-  <div class="subhero">
-    software engineer
-  </div>
+  <div class="hero">Newton Ni</div>
+  <div class="subhero">software engineer</div>
 
   <hr>
 
-  <header>
-    <h1 class="title">   
-      Ray Tracing: Memory Management
-    </h1>
-    <h2 class="date">July 8, 2019</h2>
-  </header>
-
-  <p>
-    Don't mind me, just padding this line out to about eighty characters to see width.
-    <a href="https://google.com">Testing</a>
-    <a href="https://abcd.com">Testing</a>
-  </p>
-
-  <h2>
-    Background
-  </h2>
-
-  <p>
-    Don't mind me, just padding this line out to about eighty characters to see width.
-    <a href="https://google.com">Testing</a>
-    <a href="https://abcd.com">Testing</a>
-  </p>
-  <p>
-    Don't mind me, just padding this line out to about eighty characters to see width.
-    <a href="https://google.com">Testing</a>
-    <a href="https://abcd.com">Testing</a>
-  </p>
-
-  <nav>
-    <a href="#" class="button"><i class="icon-right"></i> Read More</a>
-  </nav>
+  {% set blog = get_section(path="blog/_index.md") %}
+  {% set page = blog.pages | first %}
+  {{ macros::preview(page=page) }}
 
 {% endblock body %}

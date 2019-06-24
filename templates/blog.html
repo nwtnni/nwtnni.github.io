@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% import "macros.html" as macros %}
 
 {% block title %}
   {{ super() }} | Blog
@@ -10,21 +11,9 @@
 
 {% block body %}
   {% for page in section.pages %}
-    <section>
-      <header>
-        <h1 class="title">{{ page.title }}</h1>
-        <h2 class="date">{{ page.date | date(format="%b %e, %Y")}}</h2>
-      </header>
-
-      {{ page.description | safe }}
-
-      <nav>
-        <a href="{{ page.path }}" class="button"><i class="icon-right"></i> Read More</a>
-      </nav>
-
-      {% if not loop.last %}
-        <hr class="divider">
-      {% endif %}
-    </section>
+    {{ macros::preview(page=page) }}
+    {% if not loop.last %}
+      <hr class="divider">
+    {% endif %}
   {% endfor %}
 {% endblock body %}

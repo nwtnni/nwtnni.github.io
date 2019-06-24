@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% import "macros.html" as macros %}
 
 {% block title %}
   {{ super() }} | {{ page.title }}
@@ -11,10 +12,7 @@
 {% block body %}
 
   <article>
-    <header>
-      <h1 class="title">{{ page.title }}</h1>
-      <h2 class="date">{{ page.date | date(format="%b %e, %Y") }}</h2>
-    </header>
+    {{ macros::header(page=page) }}
     <main>
       {{ page.content | safe }}
     </main>
