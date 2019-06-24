@@ -5,10 +5,10 @@ description = "A brief explanation of Markov chains and Markov chain text genera
 +++
 
 My second personal project on Github was a Markov chain text generator.
-Right now it's fairly simple, using nothing more than a command-line
+Right now it's fairly simple, using nothing more than a command line
 interface and parsing only a single file at a time. Also there are no
 unit tests (oops). I'd like to revisit this project and add a few
-more features--and unit tests.
+more features and unit tests.
 
 ## Background
 
@@ -22,8 +22,8 @@ My --> second --> personal --> project --> ?
 ```
 
 We want to predict the next word. One of the simplest ideas is to
-just look at the previous word: `project`. So we leaf through a 
-book, and whenever we see the word `project`, we make
+just look at the previous word: "project". So we leaf through a 
+book, and whenever we see the word "project", we make
 a note of what word comes next, and end up with a 
 professional-looking histogram like this:
 
@@ -37,20 +37,20 @@ professional-looking histogram like this:
    is    was    failed
 ```
 
-Okay cool--so what can we do with this graph? Well, we can extract
+Okay, cool. What can we do with this graph? Well, we can extract
 an estimate of [conditional probability](https://en.wikipedia.org/wiki/Conditional_probability). 
-Out of the ten times we counted 'project', 'is' came next five times. 
-Extending this logic to 'was' and 'failed', we can come up with this 
+Out of the ten times we counted "project", "is" came next five times. 
+Extending this logic to "was" and "failed", we can come up with this 
 table:
 
 | Word     | Probability |
 |----------|:-----------:|
-| 'is'     |    50%      |
-| 'was'    |    30%      |
-| 'failed' |    20%      |
+| "is"     |    50%      |
+| "was"    |    30%      |
+| "failed" |    20%      |
 
 So how do we predict what word comes next? Just take the highest
-probability choice: 'is'. 
+probability choice: "is". 
 
 ## Text Generation
 
@@ -74,7 +74,7 @@ have written:
 | 'failed' |    20%      |
 
 How do we choose between them? Well, we can be lazy and just
-use the same probability distribution: we choose 'is' with 50%
+use the same probability distribution: we choose "is" with 50%
 probability, and so on. And that's it! The basic idea behind Markov 
 chain text generation. We can just keep tacking on words, repeating
 the process every time.
@@ -96,8 +96,8 @@ My --> second --> personal --> project --> ?
 ```
 
 Let's say we want to use a 3rd order Markov chain. 
-Instead of leafing through books looking for just the word 'project', we'd
-look for the phrase 'second personal project', and record what
+Instead of leafing through books looking for just the word "project", we'd
+look for the phrase "second personal project", and record what
 comes next. Intuitively, this does a better job of capturing the
 context, and is still relatively easy to program.
 
@@ -147,7 +147,7 @@ autocompletion suggestions from the Markov chain.
 **Parsing source text.** Not sure about this one.  Stripping the source text 
 of punctuation before feeding it into the parser may or may not help. I don't 
 really want to figure out proper grammar generation for generated text, but 
-having `this phrase` and `this phrase."` as separate representations in the 
+having "this phrase" and "this phrase."" as separate representations in the 
 model doesn't seem right.
 
 **Web app.** There are way too many of these floating around the Internet,

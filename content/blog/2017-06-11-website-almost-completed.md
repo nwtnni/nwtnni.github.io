@@ -68,7 +68,7 @@ web pages, which is perfect for blogging since you have a lot of content
 (i.e. posts) which all have the same page layout. You just have to write
 the corresponding templates, and Jekyll processes the posts into full pages.
 
-So I wrote one default template that `includes` files for the head,
+So I wrote one default template that includes files for the head,
 header, and footer. The body is filled in with a separate template for 
 each page layout:
 
