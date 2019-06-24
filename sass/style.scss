@@ -53,6 +53,15 @@ h2 {
 p, ul, li {
   margin: $gap-text 0;
   font-family: "Merriweather", serif;
+  a {
+    color: $link-new;
+    &:hover, &:focus {
+      text-decoration: underline;
+    }
+    &:visited {
+      color: $link-old;
+    }
+  }
 }
 
 pre {
@@ -95,16 +104,6 @@ a {
 
 i {
   color: $theme;
-}
-
-p a {
-  color: $link-new;
-  &:hover, &:focus {
-    text-decoration: underline;
-  }
-  &:visited {
-    color: $link-old;
-  }
 }
 
 nav {

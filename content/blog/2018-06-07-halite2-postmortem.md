@@ -33,11 +33,11 @@ I opted early on for a stateless algorithm, where each turn's decisions are
 independent of the previous turn. This works a little better with Rust's functional
 flavor, and also makes things easier to reason about.
 
-### state.rs
+## State
 
 Game entities like ships and planets were easily represented by structs, mapping
 fields almost one-to-one to the original Halite descriptions. The only
-notable thing here is getting to use the `Option` enum to describe
+notable thing here is getting to use the Option enum to describe
 nullable values. For example, not all planets have owners:
 
 ```rust
@@ -56,13 +56,13 @@ pub fn is_owned(planet: &Planet) -> bool {
 ```
 
 While the second implementation is a little more verbose, the benefit is that our
-usage of `planet.owner` is checked at compile time. We can't just forget to check
-for the special value anymore: `Option<ID>` is a completely different type than `ID`,
-and the compiler enforces that we handle the `None` case.
+usage of planet.owner is checked at compile time. We can't just forget to check
+for the special value anymore: Option\<ID\> is a completely different type than ID,
+and the compiler enforces that we handle the None case.
 
-### Parsing
+## Parsing
 
-The Halite server communicates via `stdin` and `stdout`. The communication protocol
+The Halite server communicates via stdin and stdout. The communication protocol
 was designed so parsing could be done in a streaming fashion: all variable length
 sections are preceded by a count. I used a trait to encode this:
 
@@ -72,12 +72,12 @@ pub trait FromStream {
 }
 ```
 
-We can read this as: all data types implementing the `FromStream` trait define a function
-`take`, which takes in a mutable queue of strings (the stream) and returns a
+We can read this as: all data types implementing the FromStream trait define a function
+take, which takes in a mutable queue of strings (the stream) and returns a
 new instance of the data type. Once we've defined our own trait, we can implement it
-for any type: even types from the standard library, like `i32` and `f32`.
+for any type: even types from the standard library, like i32 and f32.
 
-### Navigation
+## Navigation
 
 Collision detection was the most math-heavy section of my codebase.
 
@@ -102,7 +102,7 @@ As far as actual navigation goes, a naive approach served me pretty well: I sent
 ships in straight lines toward their targets, and adjusted course until there were
 no collisions.
 
-### Scouting
+## Scouting
 
 Although everyone has complete knowledge of the game state, there's still a lot of information
 to extract. Most of my calculations were concerned with distance: for example, where are the
@@ -110,7 +110,11 @@ nearest allies, enemies, and planets? Do I have more allies in my combat radius 
 Most functions consist of a series of filters on the global population, and look something like this:
 
 ```rust
-pub fn nearest_target(&self, ship: &Ship, d: f64) -> Option<&Ship> {
+pub fn nearest_target(
+    &self,
+    ship: &Ship,
+    d: f64
+) -> Option<&Ship> {
     self.ships[&ship.id].iter()
         .take_while(|other| ship.distance_to(other) < d)
         .filter(|other| other.owner != ship.owner)
@@ -121,13 +125,13 @@ pub fn nearest_target(&self, ship: &Ship, d: f64) -> Option<&Ship> {
 
 Method chaining and closures give a distinctly functional feel to this part of the codebase.
 
-### Strategy
+## Strategy
 
 This is where I actually decide on commands for each ship. I thought of two ways to structure
 this logic:
 
-1. As an omniscient general, dictating orders based on global need
-2. As a series of single ships, choosing actions based on local need
+1. Omniscient general, dictating orders based on global need
+2. Independent ships, choosing actions based on local need
 
 I found the second approach easier to think through, so that's what I went with. Each ship
 has the following priorities:
@@ -148,7 +152,7 @@ Close-range reactions were prioritized over long-range goals.
 
 This is the last iteration of my bot playing against itself:
 
-![gif](/assets/halite.gif)
+![gif](/img/halite.gif)
 
 You can see how clustering naturally occurs as ships rally to their allies when outnumbered.
 
