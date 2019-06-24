@@ -16,9 +16,14 @@ $soft: #D0D0D0;
 $link-new: #FF830F;
 $link-old: #C4650C;
 
+$gap-large: 8rem;
+$gap-medium: 6rem;
+$gap-small: 4rem;
+$gap-text: 2rem;
+
 html {
   font-size: 62.5%;
-  max-width: 800px;
+  max-width: 640px;
   margin: 1rem auto;
   color: $text-fg;
   background-color: $text-bg;
@@ -33,38 +38,28 @@ body {
 }
 
 h1 {
-  font-size: 2.5rem; 
-  margin: 6rem 0;
+  line-height: 2.0;
+  font-size: 3rem; 
+  margin: $gap-large 0;
 }
 
 h2 {
-  font-size: 2.0rem;
-  margin: 4rem 0;
+  line-height: 1.8;
+  font-size: 2.5rem;
+  margin: $gap-medium 0;
 }
 
-p {
-  margin: 2rem 0;
+p, ul, li {
+  margin: $gap-text 0;
   font-family: "Merriweather", serif;
-}
-
-article {
-  padding-bottom: 6rem;
 }
 
 // Markdown code: block
 pre {
   font-family: "Inconsolata", monospace;
-  padding: 0rem 2rem;
-  margin: 4rem 0;
-  border-radius: 10px;
-}
-
-// Markdown code: inline
-code {
-  font-family: "Inconsolata", monospace;
-  color: $code-fg;
-  background-color: $code-bg;
-  padding: 0.0rem 0.5rem;
+  padding: 1rem;
+  margin: $gap-small 0;
+  border: 1px solid $soft;
   border-radius: 10px;
 }
 
@@ -74,6 +69,17 @@ hr {
   height: 1px;
   margin: 1rem auto;
   background-color: $soft;
+}
+
+table {
+  margin: $gap-small auto;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 1rem 2rem;
+  text-align: left;
+  border-bottom: 1px solid $soft;
 }
 
 a {
@@ -125,7 +131,7 @@ nav {
   font-size: 1.2rem;
   border-radius: 20px;
   border: 1px solid $soft;
-  padding: 1rem 3rem;
+  padding: 1rem 2rem;
   margin: 2rem;
   &:hover, &:focus {
     color: $text-bg;

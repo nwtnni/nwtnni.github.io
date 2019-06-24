@@ -1,5 +1,13 @@
 {% extends "base.html" %}
 
+{% block title %}
+  {{ super() }} | Blog
+{% endblock title %}
+
+{% block description %}
+  Archived blog posts.
+{% endblock description %}
+
 {% block body %}
 
   {{ __tera_context }}
