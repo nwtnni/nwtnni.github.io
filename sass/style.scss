@@ -6,6 +6,7 @@ $code-fg: #268bd2;
 // Gray text on white background
 $text-bg: #FFFFFF;
 $text-fg: #555555;
+$text-quote: #888888;
 
 // Solarized Blue
 $theme: $code-fg;
@@ -54,13 +55,19 @@ p, ul, li {
   font-family: "Merriweather", serif;
 }
 
-// Markdown code: block
 pre {
   font-family: "Inconsolata", monospace;
   padding: 1rem;
   margin: $gap-small 0;
   border: 1px solid $soft;
   border-radius: 10px;
+}
+
+blockquote {
+  margin: $gap-small 0;
+  padding: 0 2rem;
+  color: $text-quote;
+  border-left: 1px solid $soft;
 }
 
 hr {
