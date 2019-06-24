@@ -1,21 +1,14 @@
-// Solarized Light
-// Blue text on tan background
-$code-bg: #fdf6e3;
-$code-fg: #268bd2;
-
 // Gray text on white background
 $text-bg: #FFFFFF;
-$text-fg: #555555;
+$text-fg: #505050;
 $text-quote: #888888;
 
-// Solarized Blue
-$theme: $code-fg;
+$theme: #268bd2;
 
-$soft: #D0D0D0;
+$soft: #E0E0E0;
 
-// Orange links
-$link-new: #FF830F;
-$link-old: #C4650C;
+$link-new: $theme;
+$link-old: #1A6091;
 
 $gap-large: 8rem;
 $gap-medium: 6rem;
@@ -150,9 +143,10 @@ nav {
 
 .hero {
   font-size: 6rem;
+  font-weight: bold;
+  color: #333333;
   text-align: center;
   padding-top: 5rem;
-  color: $theme;
 }
 
 .subhero {
