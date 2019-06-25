@@ -1,4 +1,21 @@
-@import "_font.scss";
+@font-face {
+  font-family: 'fontello';
+  src: url('/font/fontello.woff2') format('woff2'),
+       url('/font/fontello.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+ 
+[class^="icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+}
+ 
+.icon-twitter:before { content: '\f099'; } /* '' */
+.icon-github:before { content: '\f09b'; } /* '' */
+.icon-right:before { content: '\f0a9'; } /* '' */
+.icon-mail:before { content: '\f0e0'; } /* '' */
+.icon-linkedin:before { content: '\f0e1'; } /* '' */
 
 $text-bg: #FFFFFF;
 $text-fg: #505050;
