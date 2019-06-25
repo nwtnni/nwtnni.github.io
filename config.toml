@@ -11,3 +11,4 @@ generate_rss = true
 
 [extra]
 author = "Newton Ni"
+production = true
