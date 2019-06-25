@@ -10,12 +10,10 @@
 {% endblock description %}
 
 {% block body %}
-
   <article>
     {{ macros::header(page=page) }}
     <main>
       {{ page.content | safe }}
     </main>
   </article>
-
 {% endblock body %}

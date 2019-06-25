@@ -1,38 +1,26 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
   <head>
     <meta charset="utf-8">
     <meta name="author" content="{{ config.extra.author }}">
     <meta name="description" content="{% block description %}{{ config.description }}{% endblock description %}">
     <meta name="viewport" content="width=device-width, initial-scale=1" >
     <title>{% block title %}{{ config.title }}{% endblock title %}</title>
-
-    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Merriweather:400, 900|Merriweather Sans:400, 900" rel="stylesheet"> 
-
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Merriweather+Sans:400,700|Merriweather:400,700&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/fontello.css">
   </head>
   <body>
-
     <hr>
-
     <nav>
       <a href="/">Home</a>
       <a href="/about">About</a>
       <a href="/blog">Blog</a>
       <a href="https://github.com/nwtnni/resume/blob/master/resume.pdf">Resume</a>
     </nav>
-
     <hr>
-
     {% block body %}
-
     {% endblock body %}
-
     <hr class="divider">
-
     <nav>
       <a href="https://github.com/nwtnni" class="button"><i class="icon-github"></i><span class="collapse"> GitHub</span></a>
       <a href="mailto:nwtnni@gmail.com" class="button"><i class="icon-mail"></i><span class="collapse"> Gmail</span></a>
