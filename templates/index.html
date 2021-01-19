@@ -4,8 +4,4 @@
 {% block body %}
   <div class="hero">Newton Ni</div>
   <div class="subhero">software engineer</div>
-  <hr>
-  {% set blog = get_section(path="blog/_index.md") %}
-  {% set page = blog.pages | first %}
-  {{ macros::preview(page=page) }}
 {% endblock body %}

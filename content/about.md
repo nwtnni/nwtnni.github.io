@@ -1,7 +1,7 @@
 +++
 title = "About"
 description = "About Newton Ni."
-template = "about.html"
+template = "content.html"
 +++
 
 # Hello!
