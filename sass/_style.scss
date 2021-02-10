@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'fontello';
-  src: url('../font/fontello.woff2?20070202') format('woff2'),
-       url('../font/fontello.woff?20070202') format('woff');
+  src: url('/font/fontello.woff2?20070202') format('woff2'),
+       url('/font/fontello.woff?20070202') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -54,18 +54,6 @@ body {
 
 main {
   padding: 1rem 0;
-}
-
-h1 {
-  line-height: 2.0;
-  font-size: 3rem;
-  margin: $gap-large 0;
-}
-
-h2 {
-  line-height: 1.8;
-  font-size: 2.5rem;
-  margin: $gap-medium 0;
 }
 
 p, ul, li {
@@ -124,7 +112,7 @@ i {
   color: $theme;
 }
 
-nav {
+nav, footer, .read-more {
   display: grid;
   align-items: center;
   justify-items: center;
@@ -142,26 +130,25 @@ nav {
       color: $theme;
     }
   }
+  .button {
+    font-size: 12px;
+    border-radius: 20px;
+    border: 1px solid $soft;
+    padding: 1rem 4rem;
+    margin: 2rem 0;
+    &:hover, &:focus {
+      color: $text-bg;
+      background-color: $theme;
+      i {
+          color: $text-bg;
+      }
+    }
+  }
 }
 
 .collapse {
   @media all and (min-width: 480px) and (max-width: 719px) {
     display: none;
-  }
-}
-
-.button {
-  font-size: 12px;
-  border-radius: 20px;
-  border: 1px solid $soft;
-  padding: 1rem 4rem;
-  margin: 2rem 0;
-  &:hover, &:focus {
-    color: $text-bg;
-    background-color: $theme;
-    i {
-        color: $text-bg;
-    }
   }
 }
 
@@ -171,14 +158,4 @@ nav {
   color: #333333;
   text-align: center;
   margin: $gap-large 0;
-}
-
-.title {
-  flex-grow: 1;
-}
-
-.date {
-  font-weight: normal;
-  text-transform: lowercase;
-  margin-top: -$gap-large;
 }

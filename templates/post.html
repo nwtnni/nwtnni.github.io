@@ -6,14 +6,12 @@
 {% endblock title %}
 
 {% block description %}
-  {{ page.description }} 
+  {{ page.description }}
 {% endblock description %}
 
 {% block body %}
   <article>
     {{ macros::header(page=page) }}
-    <main>
-      {{ page.content | safe }}
-    </main>
+    {{ page.content | safe }}
   </article>
 {% endblock body %}
