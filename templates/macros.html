@@ -4,3 +4,13 @@
     <h2 class="date">{{ page.date | date(format="%b %e, %Y")}}</h2>
   </header>
 {% endmacro header %}
+
+{% macro preview(page) %}
+  <section>
+    {{ self::header(page=page) }}
+    {{ page.summary | safe }}
+    <nav>
+      <a href="{{ page.permalink }}" class="button"><i class="icon-right-big"></i> Read More</a>
+    </nav >
+  </section>
+{% endmacro preview %}
