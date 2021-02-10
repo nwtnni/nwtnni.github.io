@@ -4,26 +4,30 @@ description = "About Newton Ni."
 template = "content.html"
 +++
 
-# Hello!
-
-My name is Newton Ni.
+### Hello!
 
 I graduated with a computer science degree from Cornell University's College
 of Engineering in 2019. I'm interested in applying high-level ideas from
-programming language theory to low-level systems, like computer graphics or
-networks. I enjoy programming, teaching, reading, and writing.
+programming language theory to low-level topics, like compilers, networks,
+operating systems, or distributed systems. I enjoy leveraging type systems
+and other static analyses to ensure correctness and improve performance.
 
 For now, you can find me:
-- Working as a software engineer for [Commure][0]
-- Tinkering with side projects on [Github][1]
 
-As for technical skills,
+- Working as a software engineer for [Commure][com]
+- Tinkering with side projects on [Github][gh]
+- Practicing guitar and violin
+- Bouldering, running, and playing volleyball
+- Attending [Central Square Church][csc]
 
-I'm proficient in Rust, OCaml, Java, and Python,
-and familiar with C, Javascript, HTML, and CSS.
+As for technical skills:
 
-Check out my [resume][2] for more information!
+My preferred language is Rust. I am also proficient in OCaml, Java, and Python,
+and have some knowledge of C, TypeScript, and JavaScript.
 
-[0]: https://commure.com/
-[1]: https://github.com/nwtnni
-[2]: https://github.com/nwtnni/resume/blob/master/resume.pdf
+Check out my [resume][res] for more information!
+
+[com]: https://commure.com/
+[gh]: https://github.com/nwtnni
+[csc]: https://ccfc-church.org/
+[res]: https://github.com/nwtnni/resume/blob/master/resume.pdf
