@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nwtnni.me/sitemap.xml
